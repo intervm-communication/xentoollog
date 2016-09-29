@@ -4,6 +4,7 @@
 #include <linux/kernel.h>
 #include <linux/bug.h>
 #include <linux/errno.h>
+#include <linux/slab.h>
 
 /*
  * For these files only, alias kernel-space constructs to their userspace
@@ -12,6 +13,7 @@
  */
 #define assert(condition) BUG_ON(!(condition))
 #define malloc(size) kzalloc(size, GFP_KERNEL)
+#define free(addr) kfree(addr)
 
 /*
  * Code from the xtl core attempts to save errno; breaking compiling in

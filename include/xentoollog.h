@@ -65,6 +65,7 @@ struct xentoollog_logger {
 
 /*---------- facilities for consuming log messages ----------*/
 
+xentoollog_logger *xtl_createlogger_default(void);
 
 void xtl_logger_destroy(struct xentoollog_logger *logger /* 0 is ok */);
 

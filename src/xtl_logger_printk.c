@@ -130,9 +130,14 @@ static void printk_destroy(struct xentoollog_logger *logger_in) {
     kfree(lg);
 }
 
-xentoollog_logger_printk *xtl_createlogger_printk() {
+xentoollog_logger_printk *xtl_createlogger_printk(void) {
     xentoollog_logger_printk newlogger;
     return XTL_NEW_LOGGER(printk, newlogger);
+}
+
+
+xentoollog_logger *xtl_createlogger_default(void) {
+    return (xentoollog_logger *)xtl_createlogger_printk();
 }
 
 EXPORT_SYMBOL(xtl_createlogger_printk);

@@ -191,6 +191,10 @@ xentoollog_logger_stdiostream *xtl_createlogger_stdiostream
     return XTL_NEW_LOGGER(stdiostream, newlogger);
 }
 
+xentoollog_logger *xtl_createlogger_default(void) {
+    return (xentoollog_logger *)xtl_createlogger_stdiostream(stderr, XTL_PROGRESS, 0);
+}
+
 /*
  * Local variables:
  * mode: C
