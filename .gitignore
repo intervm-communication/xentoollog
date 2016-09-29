@@ -6,6 +6,7 @@ tags
 .tmp_versions/*
 *.d
 *.mod.*
-Modules.symvers
+Module.symvers
 *.mod
 modules.order
+
